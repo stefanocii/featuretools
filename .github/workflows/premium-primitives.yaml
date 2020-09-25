@@ -1,0 +1,20 @@
+name: premium-primitives-job
+on:
+  push:
+    branches:
+      - main
+  release:
+    types: [published]
+
+jobs:
+  run-premium-primitives-tests:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: Trigger exiting circleci job
+      uses: zivkaziv/circleci-trigger-github-action@v1.0
+      with:
+        token: ${{ secrets.CIRCLE_CI_TOKEN_PREMIUM_PRIMITIVES }}
+        branch: main
+        org: FeatureLabs
+        repo: premium-primitives
