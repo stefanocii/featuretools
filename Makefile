@@ -4,6 +4,8 @@ clean:
 	find . -name '*.pyc' -delete
 	find . -name __pycache__ -delete
 	find . -name '*~' -delete
+	
+	ciao
 
 .PHONY: lint
 lint:
